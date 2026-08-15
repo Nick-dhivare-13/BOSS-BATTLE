@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <radialGradient id="alleyLight" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#0f172a" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#020617" stop-opacity="1"/>
+    </radialGradient>
+    
+    <!-- Purple Flame Aura Glows -->
+    <filter id="purpleGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="16" result="blur1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="30" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="eyeGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Linear Gradients for Purple Shadow Flames -->
+    <linearGradient id="purpleFlameGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#3b0764"/>
+      <stop offset="35%" stop-color="#7e22ce"/>
+      <stop offset="70%" stop-color="#a855f7"/>
+      <stop offset="95%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#f3e8ff"/>
+    </linearGradient>
+
+    <linearGradient id="bodyShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="40%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Alleyway Background -->
+  <rect width="1200" height="675" fill="url(#alleyLight)"/>
+
+  <!-- Alley perspective lines / buildings -->
+  <g opacity="0.3" stroke="#334155" stroke-width="1.5">
+    <!-- Left building walls -->
+    <polygon points="0,0 380,180 360,675 0,675" fill="#090d16"/>
+    <line x1="0" y1="120" x2="380" y2="220"/>
+    <line x1="0" y1="280" x2="370" y2="340"/>
+    <line x1="0" y1="450" x2="360" y2="480"/>
+    <!-- Windows and shutters left -->
+    <rect x="80" y="160" width="80" height="140" fill="#020617" stroke="#1e293b"/>
+    <rect x="220" y="240" width="60" height="100" fill="#020617" stroke="#1e293b"/>
+
+    <!-- Right building walls -->
+    <polygon points="1200,0 820,180 840,675 1200,675" fill="#090d16"/>
+    <line x1="1200" y1="120" x2="820" y2="220"/>
+    <line x1="1200" y1="280" x2="830" y2="340"/>
+    <line x1="1200" y1="450" x2="840" y2="480"/>
+    <!-- Windows and shutters right -->
+    <rect x="1040" y="160" width="80" height="140" fill="#020617" stroke="#1e293b"/>
+    <rect x="920" y="240" width="60" height="100" fill="#020617" stroke="#1e293b"/>
+
+    <!-- Alley ground perspective -->
+    <polygon points="380,180 820,180 900,675 300,675" fill="#050811"/>
+    <line x1="600" y1="180" x2="600" y2="675" stroke="#1e293b" stroke-dasharray="10,15"/>
+    <line x1="480" y1="260" x2="420" y2="675" stroke="#0f172a"/>
+    <line x1="720" y1="260" x2="780" y2="675" stroke="#0f172a"/>
+  </g>
+
+  <!-- Distant Moody Street Light Overhead -->
+  <circle cx="600" cy="110" r="140" fill="#38bdf8" opacity="0.08" filter="url(#purpleGlow)"/>
+  <circle cx="600" cy="90" r="12" fill="#e0f2fe" opacity="0.6"/>
+
+  <!-- VIOLET / PURPLE FLAMING SHADOW WINGS & AURA (Left Wing) -->
+  <g filter="url(#purpleGlow)">
+    <!-- Outer flame wings left -->
+    <path d="M 520,320 
+             C 420,260 320,160 380,60 
+             C 330,120 310,210 350,300 
+             C 290,200 290,120 320,80 
+             C 270,160 260,280 320,380 
+             C 260,320 250,230 270,180 
+             C 230,280 250,420 360,490 
+             C 280,440 280,380 300,340 
+             C 300,450 400,530 480,520 
+             Z" 
+          fill="url(#purpleFlameGrad)" opacity="0.95"/>
+
+    <!-- Outer flame wings right -->
+    <path d="M 680,320 
+             C 780,260 880,160 820,60 
+             C 870,120 890,210 850,300 
+             C 910,200 910,120 880,80 
+             C 930,160 940,280 880,380 
+             C 940,320 950,230 930,180 
+             C 970,280 950,420 840,490 
+             C 920,440 920,380 900,340 
+             C 900,450 800,530 720,520 
+             Z" 
+          fill="url(#purpleFlameGrad)" opacity="0.95"/>
+
+    <!-- Swirling tendrils around silhouette -->
+    <path d="M 450,250 C 400,200 420,120 470,80 C 450,130 470,180 500,220 Z" fill="#c084fc"/>
+    <path d="M 750,250 C 800,200 780,120 730,80 C 750,130 730,180 700,220 Z" fill="#c084fc"/>
+    <path d="M 530,550 C 490,620 540,660 560,670 C 530,640 550,590 560,560 Z" fill="#a855f7"/>
+    <path d="M 670,550 C 710,620 660,660 640,670 C 670,640 650,590 640,560 Z" fill="#a855f7"/>
+  </g>
+
+  <!-- GROUND PURPLE REFLECTION -->
+  <ellipse cx="600" cy="620" rx="160" ry="35" fill="#7e22ce" opacity="0.45" filter="url(#purpleGlow)"/>
+
+  <!-- CENTRAL MENACING SHADOW ENTITY SILHOUETTE -->
+  <g fill="url(#bodyShadow)">
+    <!-- Spiky Demon Anime Hair / Head Silhouette -->
+    <path d="M 600,100 
+             L 615,60 L 625,95 L 650,75 L 645,115 L 670,105 L 655,145 L 685,155 L 650,180 L 670,210 L 635,215 L 640,245 L 600,260 
+             L 560,245 L 565,215 L 530,210 L 550,180 L 515,155 L 545,145 L 530,105 L 555,115 L 550,75 L 575,95 L 585,60 
+             Z" />
+
+    <!-- Jagged Torn Shadow Torso & Mantle -->
+    <path d="M 540,240 
+             L 490,280 L 460,330 L 485,345 L 450,390 L 500,370 L 480,440 L 520,410 L 515,480 L 555,440 L 550,500 L 600,480 
+             L 650,500 L 645,440 L 685,480 L 680,410 L 720,440 L 700,370 L 750,390 L 715,345 L 740,330 L 710,280 L 660,240 
+             Z" />
+
+    <!-- Slender Shadow Arms with Razor Claw Hands -->
+    <!-- Left Arm -->
+    <path d="M 480,310 
+             Q 450,380 440,440 
+             Q 425,500 410,540 
+             L 400,570 L 415,550 L 405,585 L 425,555 L 425,595 L 440,560 L 450,580 L 445,540 
+             Q 460,490 475,440 
+             Q 490,380 510,330 
+             Z" />
+
+    <!-- Right Arm -->
+    <path d="M 720,310 
+             Q 750,380 760,440 
+             Q 775,500 790,540 
+             L 800,570 L 785,550 L 795,585 L 775,555 L 775,595 L 760,560 L 750,580 L 755,540 
+             Q 740,490 725,440 
+             Q 710,380 690,330 
+             Z" />
+
+    <!-- Jagged Torn Shadow Kilt / Shroud -->
+    <path d="M 520,450 
+             L 470,530 L 495,540 L 460,600 L 510,575 L 530,640 L 565,580 L 585,650 L 600,590 
+             L 615,650 L 635,580 L 670,640 L 690,575 L 740,600 L 705,540 L 730,530 L 680,450 
+             Z" />
+
+    <!-- Shadow Legs Stepping Forward in Stride -->
+    <path d="M 550,560 L 540,620 L 530,660 L 525,670 L 545,670 L 555,650 L 565,600 Z"/>
+    <path d="M 650,560 L 660,620 L 670,660 L 675,670 L 655,670 L 645,650 L 635,600 Z"/>
+  </g>
+
+  <!-- GLOWING PIERCING RED DEMONIC EYES & FACIAL RIFTS -->
+  <g filter="url(#eyeGlow)">
+    <!-- Left Eye (Aggressive slanted red glow) -->
+    <polygon points="572,175 586,182 568,187 560,181" fill="#ff0055"/>
+    <polygon points="574,177 584,182 570,185 565,181" fill="#ffffff"/>
+    <line x1="565" y1="172" x2="574" y2="155" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="560" y1="181" x2="550" y2="195" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Right Eye (Aggressive slanted red glow) -->
+    <polygon points="628,175 614,182 632,187 640,181" fill="#ff0055"/>
+    <polygon points="626,177 616,182 630,185 635,181" fill="#ffffff"/>
+    <line x1="635" y1="172" x2="626" y2="155" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="640" y1="181" x2="650" y2="195" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Faint chest energy core cracks -->
+    <path d="M 595,290 L 600,315 L 590,335 L 605,355 L 600,380" stroke="#a855f7" stroke-width="2" fill="none" opacity="0.7"/>
+  </g>
+</svg>

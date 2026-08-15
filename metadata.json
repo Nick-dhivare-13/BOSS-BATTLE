@@ -1,0 +1,8 @@
+{
+  "name": "BOSS BATTLE",
+  "description": "A comprehensive student productivity, habit tracking, study planning, and gamified boss battle app.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
